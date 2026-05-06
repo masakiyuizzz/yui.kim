@@ -15,6 +15,8 @@ yui.kim/
 ├── assets/             # 资源文件
 │   ├── bilibili-fill.svg
 │   └── netease-cloud-music-line.svg
+├── my-favicon/         # 自定义图标文件
+├── LICENSE             # 许可证文件
 └── README.md           # 项目说明
 ```
 
