@@ -1,7 +1,7 @@
 # `yui.kim` 导航主页
 > 真咲唯的资源导航主页，连接个人作品集和部分网页
 > 
-> 版本：`0.0.1-init` 最后修改时间：`2026-05-08` 审核人：`MasakiYui`
+> 版本：`0.0.2-reset` 最后修改时间：`2026-05-09` 审核人：`MasakiYui`
 ## 项目结构
 ```bash
 yui.kim/
@@ -9,50 +9,80 @@ yui.kim/
 ├── css/
 │   └── style.css       # 样式文件
 ├── js/
-│   └── main.js         # 交互逻辑
+│   ├── config.js       # 配置文件（搜索引擎、打字速度、卡片数据）
+│   ├── search.js       # 搜索模块
+│   ├── typing.js       # 打字效果模块
+│   ├── cards.js        # 卡片渲染模块
+│   └── main.js         # 入口文件
 ├── assets/             # 资源文件
 ├── my-favicon/         # 自定义图标文件
 ├── LICENSE             # 许可证文件
 └── README.md           # 项目说明
 ```
 ## 自定义配置
-### 添加新卡片
-在 `index.html` 的对应分类中添加：
-```html
-<a href="[https://example.com]" class="card" target="_blank">
-    <div class="card-header">
-        <span class="card-icon">
-            <img src="[assets/icon.svg]" alt="[图标描述]" width="20" height="20">
-        </span>
-        <h3 class="card-title">[卡片标题]</h3>
-    </div>
-    <p class="card-description">[卡片描述]</p>
-    <div class="card-footer">
-        <span class="card-link">访问 &rarr;</span>
-    </div>
-</a>
+### 修改卡片内容
+在 `js/config.js` 中修改 `CARDS_DATA` 对象：
+```javascript
+const CARDS_DATA = {
+    navigation: {
+        title: '快速导航',
+        cards: [
+            {
+                url: 'https://example.com',
+                icon: 'assets/icon.svg',
+                iconAlt: '图标描述',
+                title: '网站名称',
+                description: '网站描述'
+            }
+        ]
+    }
+};
 ```
 ### 添加新分类
-```html
-<section class="cards-section">
-    <h2 class="section-title">
-        <span class="section-prefix"># </span>
-        [新分类名称]
-    </h2>
-    <div class="cards-grid">
-        <!-- 卡片内容 -->
-    </div>
-</section>
+```javascript
+const CARDS_DATA = {
+    newSection: {
+        title: '新分类',
+        cards: [
+            // 卡片数据
+        ]
+    }
+};
 ```
 ### 修改搜索引擎
-在 `js/main.js` 中修改：
+在 `js/config.js` 中修改 `CONFIG.search`：
 ```javascript
-window.open('https://www.bing.com/search?q=' + encodedQuery, '_blank');
+const CONFIG = {
+    search: {
+        engine: 'bing',
+        engines: {
+            bing: {
+                name: 'Bing',
+                url: 'https://www.bing.com/search?q='
+            },
+            google: {
+                name: 'Google',
+                url: 'https://www.google.com/search?q='
+            }
+        }
+    }
+};
+```
+### 修改打字效果
+```javascript
+const CONFIG = {
+    typing: {
+        text: 'yui.kim',      // 打字内容
+        speed: 150,           // 每个字符间隔（毫秒）
+        pauseDuration: 3000,  // 打完后停留时间（毫秒）
+        startDelay: 500       // 开始延迟（毫秒）
+    }
+};
 ```
 ## 部署说明
-1. **本地部署**：直接打开 `index.html` 即可使用
+1. **本地部署**：下载压缩包直接打开 `index.html` 即可使用
 2. **服务器部署**：上传到 Web 服务器即可
-3. **浏览器主页**：设置为浏览器默认主页
+3. **浏览器主页**：可设置为浏览器默认主页
 ## 相关项目
 - [docs.yui.kim](https://docs.yui.kim) - 文档笔记中心
 ## 许可证

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yui.kim - 主页</title>
+    <meta name="description" content="真咲唯的秘密基地入口，个人导航主页">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
@@ -18,7 +19,7 @@
             <h1 class="title">
                 <span class="title-prefix">&gt; </span>
                 <span class="title-text" id="typingText"></span>
-                <span class="cursor">_</span>
+                <span class="cursor" aria-hidden="true">_</span>
             </h1>
             <p class="description">
                 欢迎回家，这里是真咲唯的秘密基地入口<br>
@@ -26,18 +27,19 @@
             </p>
         </header>
 
-        <section class="search-section">
+        <section class="search-section" aria-label="搜索">
             <div class="search-container">
-                <span class="search-prefix">&gt;</span>
+                <span class="search-prefix" aria-hidden="true">&gt;</span>
                 <input 
-                    type="text" 
+                    type="search" 
                     class="search-input" 
                     id="searchInput" 
                     placeholder="输入搜索内容..."
                     autocomplete="off"
+                    aria-label="搜索内容"
                 >
-                <button class="search-btn" id="searchBtn">
-                    <span class="btn-text">搜索</span>
+                <button class="search-btn" id="searchBtn" aria-label="执行搜索">
+                    搜索
                 </button>
             </div>
             <div class="search-hint">
@@ -45,217 +47,30 @@
             </div>
         </section>
 
-        <section class="cards-section">
-            <h2 class="section-title">
-                <span class="section-prefix"># </span>
-                快速导航
-            </h2>
-            <div class="cards-grid">
-                <a href="https://docs.yui.kim" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/markdown-line.svg" alt="文档笔记中心" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">docs.yui.kim</h3>
-                    </div>
-                    <p class="card-description">
-                        文档笔记中心，存放技术文档、学习笔记和个人知识库
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://mutsumi.online" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/delete-bin-line.svg" alt="废弃原始网站" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">mutsumi.online</h3>
-                    </div>
-                    <p class="card-description">
-                        原始项目，已清空仓库并存档到`/文物/mutsumi.online/`
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </section>
+        <main id="cardsContainer" aria-label="导航卡片">
+        </main>
 
-        <section class="cards-section">
-            <h2 class="section-title">
-                <span class="section-prefix"># </span>
-                友情链接
-            </h2>
-            <div class="cards-grid">
-                <a href="https://www.bilibili.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/bilibili-fill.svg" alt="Bilibili" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">www.bilibili.com</h3>
-                    </div>
-                    <p class="card-description">
-                        哔哩哔哩 (゜-゜)つロ 干杯~-bilibili
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://music.163.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/netease-cloud-music-line.svg" alt="网易云音乐" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">music.163.com</h3>
-                    </div>
-                    <p class="card-description">
-                        网易云音乐
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://github.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/github-fill.svg" alt="Github" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">github.com</h3>
-                    </div>
-                    <p class="card-description">
-                        Github代码托管平台
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://dash.cloudflare.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/cloudflare.svg" alt="Cloudflare" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">dash.cloudflare.com</h3>
-                    </div>
-                    <p class="card-description">
-                        Cloudflare云服务
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://aistudio.xiaomimimo.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/ai.svg" alt="mimo" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">aistudio.xiaomimimo.com</h3>
-                    </div>
-                    <p class="card-description">
-                        小米mimo大模型
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://chat.deepseek.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/deepseek.svg" alt="deepseek" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">chat.deepseek.com</h3>
-                    </div>
-                    <p class="card-description">
-                        DeepSeek大模型
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://platform.xiaomimimo.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/ai.svg" alt="mimo-api" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">platform.xiaomimimo.com</h3>
-                    </div>
-                    <p class="card-description">
-                        小米mimo-api
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://platform.deepseek.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/deepseek.svg" alt="deepseek-pai" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">platform.deepseek.com</h3>
-                    </div>
-                    <p class="card-description">
-                        DeepSeek-api
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="cards-section">
-            <h2 class="section-title">
-                <span class="section-prefix"># </span>
-                小工具
-            </h2>
-            <div class="cards-grid">
-                <a href="https://metronome-online.com" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/Metronome.png" alt="metronome-online" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">metronome-online.com</h3>
-                    </div>
-                    <p class="card-description">
-                        在线节拍器
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-                <a href="https://lkssite.vip" class="card" target="_blank">
-                    <div class="card-header">
-                        <span class="card-icon">
-                            <img src="assets/user-star-line.svg" alt="LKs" width="20" height="20">
-                        </span>
-                        <h3 class="card-title">lkssite.vip</h3>
-                    </div>
-                    <p class="card-description">
-                        -LKs-《良心到难以置信的网站推荐》
-                    </p>
-                    <div class="card-footer">
-                        <span class="card-link">访问 &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </section>
         <footer class="footer">
             <p class="footer-text">
                 <span class="comment">// </span>&copy; 2026 yui.kim. All rights reserved.
             </p>
             <p class="footer-text">
-                <span class="comment">// </span>Built with obsession by 真咲唯 | <a href="https://yui.kim" class="footer-link" target="_blank">yui.kim</a>
+                <span class="comment">// </span>Built with obsession by 真咲唯 | <a href="https://yui.kim" class="footer-link" target="_blank" rel="noopener">yui.kim</a>
             </p>
             <p class="footer-text">
                 <span class="comment">// </span>Designed in `放課後ティータイム`. Deployed with afternoon tea.
             </p>
             <p class="footer-text">
                 <span class="comment">// </span>Email: <a href="mailto:masakiyui@163.com" class="footer-link" title="邮件联系">masakiyui@163.com</a>
-                <span class="comment">| </span>GitHub: <a href="https://github.com/masakiyuizzz/yui.kim" class="footer-link" title="本页面Github代码">https://github.com/masakiyuizzz/yui.kim</a>
+                <span class="comment">| </span>GitHub: <a href="https://github.com/masakiyuizzz/yui.kim" class="footer-link" target="_blank" rel="noopener" title="本页面Github代码">github.com/masakiyuizzz/yui.kim</a>
             </p>
         </footer>
     </div>
 
+    <script src="js/config.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/cards.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

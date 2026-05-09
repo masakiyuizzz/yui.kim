@@ -10,6 +10,7 @@
     --color-border-focus: #059669;
     --color-prefix: #059669;
     --color-comment: #64748b;
+    --color-white: #ffffff;
     
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -133,7 +134,7 @@ body {
 
 .search-btn {
     background-color: var(--color-accent);
-    color: #ffffff;
+    color: var(--color-white);
     border: none;
     border-radius: var(--radius-sm);
     padding: 10px 20px;
