@@ -9,7 +9,7 @@ const CardsModule = (function() {
         cardEl.innerHTML = `
             <div class="card-header">
                 <span class="card-icon">
-                    <img src="${card.icon}" alt="${card.iconAlt}" width="20" height="20" loading="lazy">
+                    <img src="${card.icon}" alt="${card.iconAlt}" width="20" height="20">
                 </span>
                 <h3 class="card-title">${escapeHtml(card.title)}</h3>
             </div>
