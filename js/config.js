@@ -33,11 +33,11 @@ const CARDS_DATA = {
                 description: '文档笔记中心，存放技术文档、学习笔记和个人知识库'
             },
             {
-                url: 'https://mutsumi.online',
+                url: '',
                 icon: 'assets/delete-bin-line.svg',
                 iconAlt: '废弃原始网站',
                 title: 'mutsumi.online',
-                description: '原始项目，已清空仓库并存档到`/文物/mutsumi.online/`'
+                description: '最早的域名+网页，已清空部署并存档到`/文物/mutsumi.online/`'
             }
         ]
     },
